@@ -14,6 +14,39 @@ function App() {
           <div className='bg-red-600 text-white font-bold text-center w-full py-4 px-2 rounded-lg text-lg'>
             <h6 className='="italic text-blue-600 text-lg font-semibold border-b-2 border-blue-600"'>Currency Options</h6>
               <p className='text-base font-medium m-0'>Value to convert </p>
+                <input type="text" className='w-150'/>
+                  <div className='flex flex-col w-full gap-4'>
+                      <div className='flex'>
+                        <label htmlFor="rupees1">from                          
+                         
+                          <select className='text-black' name="" id="rupees1" style={{width: "100%"}}>
+                            <option value="">select curreny</option>
+                              <option value="pkr">pakistan</option>
+                              <option value="usa">USA</option>
+                          </select>
+                        </label>                    
+                      </div>
+
+
+
+                      <div className='flex'>
+                        <label htmlFor="rupees1">To                          
+                          <select className='text-black' name="" id="rupees2" style={{width: "100%"}}>
+                            <option value="">select curreny</option>
+                              <option value="pkr">pakistan</option>
+                              <option value="usa">USA</option>
+                          </select>
+                        </label>                    
+                      </div>
+
+                  </div>
+                  <div className='flex justify-between w-full'>
+                    <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Calculate</button>
+                    <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Clear</button>
+                  </div>
+
+
+
 
 
           </div>
