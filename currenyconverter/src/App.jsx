@@ -4,7 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+ async function currenryConverter(){
+  
+ }
+
+
+
 
   return (
     <div className='flex flex-col items-center justify-center p-10 w-full h-screen'>
