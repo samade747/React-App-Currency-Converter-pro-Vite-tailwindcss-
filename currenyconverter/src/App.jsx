@@ -4,13 +4,24 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
- async function currenryConverter(){
-  
- }
+      async function currenryConverter(){
+      var mtHeaders = new Headers();
+      mtHeaders.append("", "");
 
+      var reqestedOptons = {
+        method: "GET",
+        redirect: "follow",
+        headers: mtHeaders,
+      }
 
-
-
+      await fetch( ,
+        reqestedOptons
+        
+      )
+      .then((response) => response.text())
+      .then((result) => response.text(result))
+      .catch((error) => console.log("error", error))
+  }
   return (
     <div className='flex flex-col items-center justify-center p-10 w-full h-screen'>
  
@@ -25,9 +36,9 @@ function App() {
                         <label htmlFor="rupees1">from                          
                          
                           <select className='text-black' name="" id="rupees1" style={{width: "100%"}}>
-                            <option value="">select currency</option>
-                              <option value="pkr">pakistan</option>
-                              <option value="usa">USA</option>
+                            <option >select currency</option>
+                              <option value="PKR">pakistan</option>
+                              <option value="USD">USA</option>
                           </select>
                         </label>                    
                       </div>
@@ -37,9 +48,9 @@ function App() {
                       <div className='flex'>
                         <label htmlFor="rupees1">To                          
                           <select className='text-black' name="" id="rupees2" style={{width: "100%"}}>
-                            <option value="">select currency</option>
-                              <option value="pkr">pakistan</option>
-                              <option value="usa">USA</option>
+                            <option >select currency</option>
+                              <option value="PKR">pakistan</option>
+                              <option value="USD">USA</option>
                           </select>
                         </label>                    
                       </div>
@@ -49,12 +60,8 @@ function App() {
                     <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Calculate</button>
                     <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Clear</button>
                   </div>
-
-
-
-
-
           </div>
+          < Answerdata />
       </div>
     </div>
   )
