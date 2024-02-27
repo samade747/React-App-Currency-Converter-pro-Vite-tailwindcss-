@@ -1,17 +1,18 @@
-const Answerdata = () => {
+import App from "../App"
+import results from App
 
-
-return(
-    <div className="w-full bg-red-200 p-3 border border-2 rounded">
-        <h1 className="">Results</h1>
-        <div className="flex flex-colunm gap-2 items-center">
-            <div>
-                <p>Awaitng results from server....</p>
-            </div>
+const Answerdata = ({ results }) => {
+    return(
+        <div className="w-full bg-red-200 p-3 border border-2 rounded">
+            <h1 className="">Results</h1>
+            <div className="flex flex-colunm gap-2 items-center">
+                <div>
+                    <p>{JSON.stringify(results)}.</p>
+                </div>
+             </div>
         </div>
-    </div>
 )
 
-
-
 }
+
+export default Answerdata;

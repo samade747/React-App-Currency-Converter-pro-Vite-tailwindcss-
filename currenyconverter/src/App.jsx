@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Answerdata from "./Components/Answerdata"
 
 function App() {
+  const [results, setResults] = useState(null);
+
+  useEffect(() => {
       async function currenryConverter(){
       var mtHeaders = new Headers();
-      mtHeaders.append("", "");
+      mtHeaders.append("apikey", "s2ssWgsL4R5uDEk130JA2UKclHBcdVon");
 
       var reqestedOptons = {
         method: "GET",
@@ -14,14 +18,17 @@ function App() {
         headers: mtHeaders,
       }
 
-      await fetch( ,
-        reqestedOptons
-        
-      )
-      .then((response) => response.text())
-      .then((result) => response.text(result))
-      .catch((error) => console.log("error", error))
+      try {
+      const response = await fetch( "https://api.apilayer.com/exchangerates_data/convert?to=PKR&from=USD&amount=10", reqestedOptons)
+      const result = await response.json()
+      setResults(result) 
+      } catch (error){
+         console.log("error", error)
+      }
   }
+      currenryConverter();
+}, []);
+
   return (
     <div className='flex flex-col items-center justify-center p-10 w-full h-screen'>
  
@@ -61,7 +68,7 @@ function App() {
                     <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Clear</button>
                   </div>
           </div>
-          < Answerdata />
+          {results &&  <Answerdata  result={results}/>}
       </div>
     </div>
   )
