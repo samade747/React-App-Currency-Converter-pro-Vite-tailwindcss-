@@ -1,5 +1,5 @@
 import App from "../App"
-
+// import results from App
 
 const Answerdata = ({ results }) => {
     return(
